@@ -1,0 +1,16 @@
+{
+  "name": "gf.layerhistory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery.nicescroll": "^3.7.6",
+    "gf.tree2": "git+http://salesdemo.geoforce.com.tw:9487/GF/gf.Tree2.git"
+  }
+}
