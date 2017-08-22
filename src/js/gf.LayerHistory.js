@@ -38,9 +38,8 @@
 
         //預設參數
         gfLayerHistory.defaults = {
-            arrData: [],//原始資料
-            activeItem: [],//開啟的物件
-
+            arrData: [],            
+            activeItem: [],
             css: {
                 'width': '300px',
                 'height': '300px',
@@ -114,7 +113,7 @@
                 var o = this;
                 
                 o.target
-                    .on('click', '.gfTreeItem', function(e){
+                    .on('click', '.gfTreeItem', function(e){                        
                         var et = $(this);
                         var eid = et.data().id;
                         var lvl = et.data().lvl;
@@ -198,48 +197,74 @@
                         
 
                         o.target.getNiceScroll().resize();
+                        
                     });
+                    
             },
             _add: function (_items) {
                 var o = this;
 
                 _items.forEach(function(_item){
-                    var div = $('<div/>', {
-                        "class": "gfTreeItem",
-                        
-                        "data-id": _item[o.opt.identityField],
-                        "data-type": _item[o.opt.iconField],
-                        "data-kmlurl": _item[o.opt.urlField],
-                        "data-layerid2d": _item[o.opt.layeridField],
-                        "data-parentid": _item[o.opt.parentField],
-                        //"data-lvl": 0,
-                        "data-st": "open",
-                        //"data-path": _item[o.opt.identityField]
-                    });
-                    var icon = $('<img/>', {
-                        "class": "gfTreeContent-Icon",
-                        "src": o.opt.iconType[_item[o.opt.iconField]]["open"]
-                    });
-                    div.append(icon);
-                    var span = $('<span/>',{
-                        "class": "gfTreeContent-Text",
-                        "text": _item[o.opt.nameField]
-                    });
-                    div.append(span);
-
-                    o.target.append(div);
-                    o.target.getNiceScroll().resize();
+                    if(o.opt.arrData.length > 0){
+                        var ch = o.opt.arrData.map(function(ele){ return ele[o.opt.identityField] * 1; }).indexOf(_item[o.opt.identityField] * 1);
+                        if(ch < 0){                            
+                            o._addNewItem(_item);    
+                        }
+                        else{
+                            o._removeExistItem(ch);
+                        }
+                    }
+                    else{                        
+                        o._addNewItem(_item);
+                    }
                 });
-
                 
-
                 o.target
                     .find('.gfLayerHistory-Placeholder')
                         .remove()
-                        .end();
-                    
+                        .end();                    
             },
 
+            _addNewItem: function(_item){
+                var o = this;
+                o.opt.arrData.push(_item);
+
+                var div = $('<div/>', {
+                    "class": "gfTreeItem",
+                    
+                    "data-id": _item[o.opt.identityField],
+                    "data-type": _item[o.opt.iconField],
+                    "data-kmlurl": _item[o.opt.urlField],
+                    "data-layerid2d": _item[o.opt.layeridField],
+                    "data-parentid": _item[o.opt.parentField],
+                    //"data-lvl": 0,
+                    "data-st": "open",
+                    //"data-path": _item[o.opt.identityField]
+                });
+                var icon = $('<img/>', {
+                    "class": "gfTreeContent-Icon",
+                    "src": o.opt.iconType[_item[o.opt.iconField]]["open"]
+                });
+                div.append(icon);
+                var span = $('<span/>',{
+                    "class": "gfTreeContent-Text",
+                    "text": _item[o.opt.nameField]
+                });
+                div.append(span);
+
+                o.target.prepend(div);
+                o.target.getNiceScroll().resize();
+            },
+
+            _removeExistItem: function(_ch){
+                var o = this;
+                var id = o.opt.arrData[_ch][o.opt.identityField];
+                o.opt.arrData.splice(_ch, 1);
+                
+                o.target
+                    .find('.gfTreeItem[data-id=' + id + ']')
+                    .remove();
+            },
 
             //註冊事件接口
             _subscribeEvents: function () {
