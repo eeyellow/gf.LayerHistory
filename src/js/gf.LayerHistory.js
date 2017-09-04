@@ -4,25 +4,25 @@
     var pluginName = 'gfLayerHistory'; //Plugin名稱
     var gfLayerHistory;
 
-    if($.cachedScript == undefined){
-        $.cachedScript = function (url, options) {
-            // Allow user to set any option except for dataType, cache, and url
-            options = $.extend(options || {}, {
-                dataType: "script",
-                cache: true,
-                url: url
-            });
-            // Use $.ajax() since it is more flexible than $.getScript
-            // Return the jqXHR object so we can chain callbacks
-            return $.ajax(options);
-        };
-    }
-
     //Load dependencies first
-    $.cachedScript('node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js').done(function(){
+    $.when(
+        $.ajax({
+            url: 'node_modules/gf.layerhistory/src/css/gf.LayerHistory.css',
+            dataType: 'text',
+            cache: true
+        }).then(data => {
+            var style = $('<style/>',{ 'text': data });
+            $('head').append(style);
+        }),
+        $.ajax({
+            url: 'node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js',
+            dataType: 'script',
+            cache: true
+        })
+    ).done(function(){
         //建構式
         gfLayerHistory = function (element, options) {
-
+            
             this.target = element; //html container
             //this.prefix = pluginName + "_" + this.target.attr('id'); //prefix，for identity
             this.opt = {};
