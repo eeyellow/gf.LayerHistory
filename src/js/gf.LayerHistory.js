@@ -4,16 +4,16 @@
     var pluginName = 'gfLayerHistory'; //Plugin名稱
     var gfLayerHistory;
 
+    $.ajax({
+        url: 'node_modules/gf.layerhistory/src/css/gf.LayerHistory.css',
+        dataType: 'text',
+        cache: true
+    }).then(data => {
+        var style = $('<style/>',{ 'text': data });
+        $('head').append(style);
+    });
     //Load dependencies first
     $.when(
-        $.ajax({
-            url: 'node_modules/gf.layerhistory/src/css/gf.LayerHistory.css',
-            dataType: 'text',
-            cache: true
-        }).then(data => {
-            var style = $('<style/>',{ 'text': data });
-            $('head').append(style);
-        }),
         $.ajax({
             url: 'node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js',
             dataType: 'script',
@@ -22,7 +22,7 @@
     ).done(function(){
         //建構式
         gfLayerHistory = function (element, options) {
-            
+
             this.target = element; //html container
             //this.prefix = pluginName + "_" + this.target.attr('id'); //prefix，for identity
             this.opt = {};
@@ -38,15 +38,14 @@
 
         //預設參數
         gfLayerHistory.defaults = {
-            arrData: [],            
+            arrData: [],
             activeItem: [],
             css: {
                 'width': '300px',
-                'height': '300px',
+
                 'background-color': '#e3f0db',
                 'overflow-y': 'auto',
                 'overflow-x': 'hidden',
-                'display': 'inline-block'
             },
 
             identityField: 'id',//識別欄位
@@ -100,20 +99,20 @@
             _style: function () {
                 var o = this;
                 o.target.css(o.opt.css);
-                
+
                 var div = $('<div/>', {
                     class: "gfLayerHistory-Placeholder",
                     text: "點選過的圖層會出現在此"
                 });
                 o.target.append(div);
-                
+
                 o.target.niceScroll({ cursorcolor: o.opt.scrollColor});
             },
             _event: function () {
                 var o = this;
-                
+
                 o.target
-                    .on('click', '.gfTreeItem', function(e){                        
+                    .on('click', '.gfTreeItem', function(e){
                         var et = $(this);
                         var eid = et.data().id;
                         var lvl = et.data().lvl;
@@ -121,8 +120,8 @@
                         var path = et.data().path;
                         var tp = et.data().type;
                         var pattern = new RegExp('^' + path + "_");
-                        
-                        
+
+
                             if(st == "close")
                             {
                                 $(this).data("st", "open");
@@ -147,7 +146,7 @@
                                                 "data-path": path + "_" + ele[o.opt.identityField]
                                             });
                                             div.css('padding-left', (lvl + 1) * 15 + 10 + "px");
-                                            
+
                                             if(o.opt.activeItem.indexOf(ele[o.opt.identityField] * 1) >= 0){
                                                 st = "open";
                                                 div.data("st", st);
@@ -167,7 +166,7 @@
                                             et.after(div);
                                         });
                                 }
-                                else{                       
+                                else{
                                     o.opt.activeItem.push($(this).data().id);
                                     var r = $(this).data();
                                     r.selected = true;
@@ -194,12 +193,12 @@
                                     o.opt.activeItem.splice(o.opt.activeItem.indexOf($(this).data().id * 1), 1);
                                 }
                             }
-                        
+
 
                         o.target.getNiceScroll().resize();
-                        
+
                     });
-                    
+
             },
             _add: function (_items) {
                 var o = this;
@@ -207,22 +206,22 @@
                 _items.forEach(function(_item){
                     if(o.opt.arrData.length > 0){
                         var ch = o.opt.arrData.map(function(ele){ return ele[o.opt.identityField] * 1; }).indexOf(_item[o.opt.identityField] * 1);
-                        if(ch < 0){                            
-                            o._addNewItem(_item);    
+                        if(ch < 0){
+                            o._addNewItem(_item);
                         }
                         else{
                             o._removeExistItem(ch);
                         }
                     }
-                    else{                        
+                    else{
                         o._addNewItem(_item);
                     }
                 });
-                
+
                 o.target
                     .find('.gfLayerHistory-Placeholder')
                         .remove()
-                        .end();                    
+                        .end();
             },
 
             _addNewItem: function(_item){
@@ -231,7 +230,7 @@
 
                 var div = $('<div/>', {
                     "class": "gfTreeItem",
-                    
+
                     "data-id": _item[o.opt.identityField],
                     "data-type": _item[o.opt.iconField],
                     "data-kmlurl": _item[o.opt.urlField],
@@ -260,7 +259,7 @@
                 var o = this;
                 var id = o.opt.arrData[_ch][o.opt.identityField];
                 o.opt.arrData.splice(_ch, 1);
-                
+
                 o.target
                     .find('.gfTreeItem[data-id=' + id + ']')
                     .remove();
@@ -291,7 +290,7 @@
         this.add = function(_items){
             return gflayerhistory._add(_items);
         }
-        
+
         return this;
     };
 })(jQuery, window, document);
