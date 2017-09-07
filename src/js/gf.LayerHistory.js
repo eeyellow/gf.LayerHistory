@@ -8,7 +8,7 @@
         url: 'node_modules/gf.layerhistory/src/css/gf.LayerHistory.css',
         dataType: 'text',
         cache: true
-    }).then(data => {
+    }).then(function(data){
         var style = $('<style/>',{ 'text': data });
         $('head').append(style);
     });
