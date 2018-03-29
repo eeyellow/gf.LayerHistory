@@ -291,10 +291,10 @@
                 var transparent = $('<div/>').appendTo(control);
                 var transparentTitle = $('<label/>', { "text": '透明度' }).appendTo(transparent).css("font-size", "0.8em");
                 var transparentButton0 = $('<span/>', { "text": '0', "class": "gfTreeTransparentBtn"}).appendTo(transparent);
-                var transparentButton25 = $('<span/>', { "text": '25', "class": "gfTreeTransparentBtn"}).appendTo(transparent);
-                var transparentButton50 = $('<span/>', { "text": '50', "class": "gfTreeTransparentBtn"}).appendTo(transparent);
-                var transparentButton75 = $('<span/>', { "text": '75', "class": "gfTreeTransparentBtn"}).appendTo(transparent);
-                var transparentButton100 = $('<span/>', { "text": '100', "class": "gfTreeTransparentBtn active"}).appendTo(transparent);
+                var transparentButton1 = $('<span/>', { "text": '25', "class": "gfTreeTransparentBtn"}).appendTo(transparent);
+                var transparentButton2 = $('<span/>', { "text": '40', "class": "gfTreeTransparentBtn"}).appendTo(transparent);
+                var transparentButton3 = $('<span/>', { "text": '65', "class": "gfTreeTransparentBtn"}).appendTo(transparent);
+                var transparentButton4 = $('<span/>', { "text": '100', "class": "gfTreeTransparentBtn active"}).appendTo(transparent);
 
                 o.target.prepend(control);
                 o.target.prepend(div);
