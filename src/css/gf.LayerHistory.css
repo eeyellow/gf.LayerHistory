@@ -7,3 +7,34 @@
     margin-top: -2em;
     line-height: 4em;
 }
+
+.gfTreeControl{
+    width: auto;
+    padding: 0.6em;
+    background: #EBEFE7;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: #CCC;
+    display: flex;
+    flex-direction: row;
+    display: none;
+}
+
+.gfTreeContent-Menu {
+    width: 1em;
+    height: 1em;    
+}
+
+.gfTreeTransparentBtn{
+    width: 25px;
+    border: 1px solid #000;
+    font-size: 0.8em;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 2px;
+}
+.gfTreeTransparentBtn.active{
+    color: red;
+}

@@ -72,11 +72,16 @@
                 'wms':{
                     'close': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAABR0RVh0Q3JlYXRpb24gVGltZQA2LzkvMTETEwwTAAABpUlEQVRYhe2XTUsCQRjHf5Ob4Fshhl6jKLvUHjuV3Tx27OipxI8hfYgi6BB9g+6Bq178AIIvSZfEhAQNoYRyO7gry7Zi5rp68A8Pywyz8/z2+c8OM0JVVXQJIcgouTiQAk6ZXnfA1UnsqABgzDXMaexUsvmkJEnX0egOG6HQVJkr1RrrawFK5coQwgpAMrVTsryP3+ezpJ1UkUgYIFEqV8goOYCCecyKqS3blRwGJY9EwuxFdxNASsnmD8cBDF60IfR5+mMgzBbo6BN96Uhp8+gQaHZgsMKyArNQv98fQhj7LStgVwGeas9jx1hbwPQE21ubv/pcLheNRmM8gE0F+JNGLMJ5AzhIsLRgRAXmbIGTFXBsJxylpQUL+hsuLXAu/4xPRP8FcLICi7kROWnBihACPQCl3eng9XpsOZobw+v10O50ABQjgAQI7eluNl/vi0UpZsfVzKy3VotyuUqv17sRQghVu/0IwAW4gQAQSKcv4weyfBYMBo/tBOh2u4/1+stt8uL8AfhUVfXbDOAHfFqsYt8CVYEv4APoAu9AzwjgqMz3zh+JJ8M3gBMOmgAAAABJRU5ErkJggg==',
                     'open': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAABR0RVh0Q3JlYXRpb24gVGltZQA2LzkvMTETEwwTAAAEE0lEQVRYhd2XX2xTVRzHP7f39ra9bQUCYYoGCGQUha0DE4UEGOoDRklAY5Ro4l6EZSYEHiQ++AIxPmg08cU/EI0hGjUmBkGNJgSzbiOTjAADJ+s2BuyvQ0YotL339t57rg/tmlK7P3UVE7/NeTgn93d+n35/55x7j+S6LhOSJInmWOsWoAnYxux1GPhoc/3GUwCFufI5CwdjLW2NiqJ8HIlUs2D+/Fll7um9xJx7wnTHe/IQpQCUon5TNFpDKBgsSVuuqqoWAjR0x3tojrUCnCp+xlPUj1YqOWQtr6payMrIigagKdbS9uh0ANnACrSJecQ0EMUlmEAv659Oqtw8ExDkykFBKUo68G9ICJGHKBwv6UClDOi7dHnaZ0qXgNkTLF+29G9jsiwzOjo6PUCFDJiRJlmE/zXAXST4f5Ug3tdP+5nzXBkaRZKyO9x1BUsfuI/1a2tZ/eCKmQG4/4DgyI/H6ezuQ5YVvD4/sicL4AjBwMg1Lg/+zJrefhbODd0RV/ogKvPcPfLDcc5d7EWWFVSfn4CmoYXCaKEwgUAAWVFwHEFHZxdnu3pmAFCG4n39nL3Yk0vuwxcI4PcHUH1+vKoPj0fGNA3StxOYhsHgtXFefvW1x6YEcMv4new4h8fjQVFVvKoPr9eLR1ZAkrBti+StBGGfl3f2v07tQ9Xcup1EUX17pnagDPsvDw5nF5xwyWQMLMtCODYZwyAxfh1VEuxpbCDg9/Pis9vwelW8qpr/2qrINnQcgWkkCGl+bqTShEJh9HQKLw57d+8kqGnohsmHX3yLLCs4jp2PnWQNzNwC13URjk3dqgj79+0msmQRA1f7sc00+wqSH/rqO8au38gWruBtN+tzQAiBR5Z5buuTADy//SkSiZvsangJTQsAcOxEGyN/3sCyLBzHRggxtQPl7MJlixeh6wbvHTyMrpsENY29Ta/kk3/9/XHO/NaNZRpkTAPbsrBM8+iUALjujNv6h+tIpVJcGRzi3YOfoetmfpovj/5Ex/nfMQ0dQ0+TMQ0c28bQ0+9XzIFI9XI2PLIG28pw5eoQb3/wCbpucPibo7SfPo+p6xjpNBnDwLYyVC+5HyuTaZ7INcnbsDzteGYrAC3tpxkYGmH3G28h5Y5iVwiEEAjH4YmN61h87wI6znTmYyv2Ubpj+9PUrVrJL62/ciHei4SUnQqXmkg1j29cx9roamItbXfESYWd5lhrczRaUz93zhxSab1siKkU1ALcTCTo7LwQq9+0YfPEuJKDUAB1bOyPz7u6lPpKXM2KdX18nHi8F9M0D0mSJLm5w0ACZEAFwkD4wIE3t9RGoy/MmzdvUyUBksnkieHhoU8bd+08Bhiu6zrFACEgmGteKndncAEb0IEkcAswCwHuqorvnX8BQwcw2KDp4OkAAAAASUVORK5CYII=',
+                },
+                'menu': {
+                    'close': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA7klEQVQ4T82TMW7CQBBF/0g+QOpINEkVCmpaLoBm5COk5QYoaeAY3MDSei2LGu4QKakiBA1tCpTK8kS2sLVe2xSh8XSrnf9m/s4s4c6gO/UYGEBEXlT1bK396bFGIjIJguA7iqJLkVNbYOZXItoQ0QHAzBhz9CCFeAVgCeAjy7Jpmqa/NUBEEgDzktqGuOKKO47j+KsGhGH4lOf5HsDIg5ycyqVYVd+steuGheLAzM9EtPMgW1VdVGWJ6N0YU1gpozVGH+K+gy/uBHR1crXUqNzbQXXhduJ69sd7cxOZ+UFVH5Mk+exb+YGt8n9+5h8up1sReYC0WAAAAABJRU5ErkJggg==',
+                    'open': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA7UlEQVQ4T93SMUoDQRQG4P9/J7Cx1sraNl2OMLOwXkSi0V5FG0tPIMFi2ZfdC9h4CzFEL5B6YfbJQLIMcQQhpHG6Gd7/vcfMEDsu7pjHXgE65yYiMiJ5XlXVR27a3yag9/4OwOU69CUi4xySA2L4FsA07WhmnyGEcdu2i/R8G2BRFDdmdpUUrQAcxH0OSYEfYTO7BjAzs1cROcohA+CcuyB5v+kcw6oa7wHOueMU6ft+SfJUVVcD4L1/AXC27jKEN+AWYiGEk6Zp3gegLMvDruseSb6p6lPuySJC8gHAvK7r51iz14/0p1/+Dyb4Bv2RcxEMZACoAAAAAElFTkSuQmCC'
                 }
             },
             scrollColor: '#527100',
 
             onClick: undefined,
+            onSetOpacity: undefined,
             onSelect: undefined,
             onUnSelect: undefined,
             onInitComplete: undefined,
@@ -126,7 +131,7 @@
                             {
                                 $(this).data("st", "open");
                                 $(this).attr("data-st", "open");
-                                $(this).children('.gfTreeContent-Icon').attr('src', o.opt.iconType[tp]["open"])
+                                $(this).find('.gfTreeContent-Icon').attr('src', o.opt.iconType[tp]["open"])
 
                                 if(tp == "folder")
                                 {
@@ -176,7 +181,7 @@
                             else{
                                 $(this).data("st", "close");
                                 $(this).attr("data-st", "close");
-                                $(this).children('.gfTreeContent-Icon').attr('src', o.opt.iconType[tp]["close"])
+                                $(this).find('.gfTreeContent-Icon').attr('src', o.opt.iconType[tp]["close"])
 
                                 if(tp == "folder")
                                 {
@@ -197,12 +202,33 @@
 
                         o.target.getNiceScroll().resize();
 
-                    });
+                    })
+                    .on('click', '.gfTreeContent-Menu', function(e){
+                        e.stopPropagation();
+                        
+                        $(this).toggleClass('active');
 
+                        if($(this).hasClass('active')){
+                            //選單開啟狀態
+                            $(this).attr('src', o.opt.iconType.menu.open);
+                            $(this).closest('.gfTreeItem').next('.gfTreeControl').show();
+                        }
+                        else{
+                            //選單關閉狀態
+                            $(this).attr('src', o.opt.iconType.menu.close);
+                            $(this).closest('.gfTreeItem').next('.gfTreeControl').hide();
+                        }                                                
+                    })
+                    .on('click', '.gfTreeTransparentBtn', function(e){
+                        $(this).addClass('active').siblings().removeClass('active');
+                        var opacity = ($(this).text() * 1) / 100;
+                        var result = $(this).closest('.gfTreeControl').prev('.gfTreeItem').data();
+                        result.opacity = opacity;
+                        o.target.trigger('onSetOpacity', result);
+                    });
             },
             _add: function (_items) {
-                var o = this;
-
+                var o = this;                
                 _items.forEach(function(_item){
                     if(o.opt.arrData.length > 0){
                         var ch = o.opt.arrData.map(function(ele){ return ele[o.opt.identityField] * 1; }).indexOf(_item[o.opt.identityField] * 1);
@@ -225,7 +251,7 @@
             },
 
             _addNewItem: function(_item){
-                var o = this;
+                var o = this;                
                 o.opt.arrData.push(_item);
 
                 var div = $('<div/>', {
@@ -240,17 +266,37 @@
                     "data-st": "open",
                     //"data-path": _item[o.opt.identityField]
                 });
+                
+                //var row1 = $('<div/>').appendTo(div);                
+                
                 var icon = $('<img/>', {
                     "class": "gfTreeContent-Icon",
                     "src": o.opt.iconType[_item[o.opt.iconField]]["open"]
-                });
-                div.append(icon);
+                }).appendTo(div);
+                
                 var span = $('<span/>',{
                     "class": "gfTreeContent-Text",
                     "text": _item[o.opt.nameField]
+                }).appendTo(div);
+                
+                var menu = $('<img/>', {
+                    "class": "gfTreeContent-Menu",
+                    "src": o.opt.iconType["menu"]["close"]
+                }).appendTo(div);
+                
+                var control = $('<div/>', {
+                    "class": "gfTreeControl"
                 });
-                div.append(span);
 
+                var transparent = $('<div/>').appendTo(control);
+                var transparentTitle = $('<label/>', { "text": '透明度' }).appendTo(transparent).css("font-size", "0.8em");
+                var transparentButton0 = $('<span/>', { "text": '0', "class": "gfTreeTransparentBtn"}).appendTo(transparent);
+                var transparentButton25 = $('<span/>', { "text": '25', "class": "gfTreeTransparentBtn"}).appendTo(transparent);
+                var transparentButton50 = $('<span/>', { "text": '50', "class": "gfTreeTransparentBtn"}).appendTo(transparent);
+                var transparentButton75 = $('<span/>', { "text": '75', "class": "gfTreeTransparentBtn"}).appendTo(transparent);
+                var transparentButton100 = $('<span/>', { "text": '100', "class": "gfTreeTransparentBtn active"}).appendTo(transparent);
+
+                o.target.prepend(control);
                 o.target.prepend(div);
                 o.target.getNiceScroll().resize();
             },
@@ -269,10 +315,16 @@
             _subscribeEvents: function () {
                 //先解除所有事件接口
                 this.target.off('onClick');
+                this.target.off('onSetOpacity');
 
                 //綁定點擊事件接口
                 if (typeof (this.opt.onClick) === 'function') {
                     this.target.on('onClick', this.opt.onClick);
+                }
+
+                //綁定設定透明度事件接口
+                if (typeof (this.opt.onSetOpacity) === 'function') {
+                    this.target.on('onSetOpacity', this.opt.onSetOpacity);
                 }
             }
 
