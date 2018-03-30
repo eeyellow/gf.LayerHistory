@@ -46,7 +46,7 @@
                 'background-color': '#e3f0db',
                 'overflow-y': 'auto',
                 'overflow-x': 'hidden',
-            },
+            },            
 
             identityField: 'id',//識別欄位
             nameField: 'name',//名稱欄位
@@ -306,6 +306,11 @@
                 var id = o.opt.arrData[_ch][o.opt.identityField];
                 o.opt.arrData.splice(_ch, 1);
 
+                o.target
+                    .find('.gfTreeItem[data-id=' + id + ']')
+                    .next('.gfTreeControl')
+                    .remove()
+                    
                 o.target
                     .find('.gfTreeItem[data-id=' + id + ']')
                     .remove();
