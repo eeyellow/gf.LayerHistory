@@ -46,7 +46,7 @@
                 'background-color': '#e3f0db',
                 'overflow-y': 'auto',
                 'overflow-x': 'hidden',
-            },            
+            },
 
             identityField: 'id',//識別欄位
             nameField: 'name',//名稱欄位
@@ -205,7 +205,7 @@
                     })
                     .on('click', '.gfTreeContent-Menu', function(e){
                         e.stopPropagation();
-                        
+
                         $(this).toggleClass('active');
 
                         if($(this).hasClass('active')){
@@ -217,18 +217,19 @@
                             //選單關閉狀態
                             $(this).attr('src', o.opt.iconType.menu.close);
                             $(this).closest('.gfTreeItem').next('.gfTreeControl').hide();
-                        }                                                
+                        }
                     })
                     .on('click', '.gfTreeTransparentBtn', function(e){
                         $(this).addClass('active').siblings().removeClass('active');
                         var opacity = ($(this).text() * 1) / 100;
-                        var result = $(this).closest('.gfTreeControl').prev('.gfTreeItem').data();
+                        var data = $(this).closest('.gfTreeControl').prev('.gfTreeItem').data();
+                        var result = $.extend({}, data);
                         result.opacity = opacity;
                         o.target.trigger('onSetOpacity', result);
                     });
             },
             _add: function (_items) {
-                var o = this;                
+                var o = this;
                 _items.forEach(function(_item){
                     if(o.opt.arrData.length > 0){
                         var ch = o.opt.arrData.map(function(ele){ return ele[o.opt.identityField] * 1; }).indexOf(_item[o.opt.identityField] * 1);
@@ -251,9 +252,10 @@
             },
 
             _addNewItem: function(_item){
-                var o = this;                
+                var o = this;
                 o.opt.arrData.push(_item);
 
+                //#region 歷史圖層
                 var div = $('<div/>', {
                     "class": "gfTreeItem",
 
@@ -266,24 +268,26 @@
                     "data-st": "open",
                     //"data-path": _item[o.opt.identityField]
                 });
-                
-                //var row1 = $('<div/>').appendTo(div);                
-                
+
                 var icon = $('<img/>', {
                     "class": "gfTreeContent-Icon",
                     "src": o.opt.iconType[_item[o.opt.iconField]]["open"]
                 }).appendTo(div);
-                
+
                 var span = $('<span/>',{
                     "class": "gfTreeContent-Text",
                     "text": _item[o.opt.nameField]
                 }).appendTo(div);
-                
+                //#endregion
+
+                //#region 選單按鈕
                 var menu = $('<img/>', {
                     "class": "gfTreeContent-Menu",
                     "src": o.opt.iconType["menu"]["close"]
                 }).appendTo(div);
-                
+                //#endregion 選單按鈕
+
+                //#region 透明度調整
                 var control = $('<div/>', {
                     "class": "gfTreeControl"
                 });
@@ -295,6 +299,11 @@
                 var transparentButton2 = $('<span/>', { "text": '40', "class": "gfTreeTransparentBtn"}).appendTo(transparent);
                 var transparentButton3 = $('<span/>', { "text": '65', "class": "gfTreeTransparentBtn"}).appendTo(transparent);
                 var transparentButton4 = $('<span/>', { "text": '100', "class": "gfTreeTransparentBtn active"}).appendTo(transparent);
+                //#endregion 透明度調整
+
+                //#region 定位圖層FlyTo
+
+                //#endregion 定位圖層FlyTo
 
                 o.target.prepend(control);
                 o.target.prepend(div);
@@ -310,7 +319,7 @@
                     .find('.gfTreeItem[data-id=' + id + ']')
                     .next('.gfTreeControl')
                     .remove()
-                    
+
                 o.target
                     .find('.gfTreeItem[data-id=' + id + ']')
                     .remove();
