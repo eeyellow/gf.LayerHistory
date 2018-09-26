@@ -33,6 +33,8 @@
                 this._style();
                 this._event();
                 this._subscribeEvents();
+
+                this.target.trigger('onInitComplete');
             }
         };
 
@@ -302,7 +304,9 @@
                 //#endregion 透明度調整
 
                 //#region 定位圖層FlyTo
-
+                var flytoContainer = $('<div/>').appendTo(control);
+                var flytoTitle = $('<label/>', { "text": '圖層定位' }).appendTo(flytoContainer).css("font-size", "0.8em");
+                var flytoButton = $('<span/>', { "text": '送出定位', "class": "gfTreeFlytoBtn"}).appendTo(flytoContainer);
                 //#endregion 定位圖層FlyTo
 
                 o.target.prepend(control);
@@ -329,11 +333,17 @@
             _subscribeEvents: function () {
                 //先解除所有事件接口
                 this.target.off('onClick');
+                this.target.off('onInitComplete');
                 this.target.off('onSetOpacity');
 
                 //綁定點擊事件接口
                 if (typeof (this.opt.onClick) === 'function') {
                     this.target.on('onClick', this.opt.onClick);
+                }
+
+                //綁定初始化完成接口
+                if (typeof (this.opt.onInitComplete) === 'function') {
+                    this.target.on('onInitComplete', this.opt.onInitComplete);
                 }
 
                 //綁定設定透明度事件接口

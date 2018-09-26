@@ -3,7 +3,7 @@
     text-align: center;
     position: relative;
     top: 50%;
-    height: 4em;    
+    height: 4em;
     margin-top: -2em;
     line-height: 4em;
 }
@@ -22,7 +22,7 @@
 
 .gfTreeContent-Menu {
     width: 1em;
-    height: 1em;    
+    height: 1em;
 }
 
 .gfTreeTransparentBtn{
@@ -37,4 +37,15 @@
 }
 .gfTreeTransparentBtn.active{
     color: red;
+}
+
+.gfTreeFlytoBtn{
+    width: 50px;
+    border: 1px solid #000;
+    font-size: 0.8em;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 2px;
 }

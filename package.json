@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.2.1",
-    "jquery.nicescroll": "^3.7.6",
-    "gf-tree2": "git+https://github.com/eeyellow/gf.Tree2.git"
+    "jquery.nicescroll": "^3.7.6"
   }
 }
