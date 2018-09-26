@@ -88,7 +88,8 @@
             onUnSelect: undefined,
             onInitComplete: undefined,
             onDragStart: undefined,
-            onDragEnd: undefined
+            onDragEnd: undefined,
+            onAddNew: undefined
         };
 
         //方法
@@ -312,6 +313,8 @@
                 o.target.prepend(control);
                 o.target.prepend(div);
                 o.target.getNiceScroll().resize();
+
+                o.target.trigger('onAddNew');
             },
 
             _removeExistItem: function(_ch){
@@ -335,6 +338,7 @@
                 this.target.off('onClick');
                 this.target.off('onInitComplete');
                 this.target.off('onSetOpacity');
+                this.target.off('onAddNew');
 
                 //綁定點擊事件接口
                 if (typeof (this.opt.onClick) === 'function') {
@@ -349,6 +353,11 @@
                 //綁定設定透明度事件接口
                 if (typeof (this.opt.onSetOpacity) === 'function') {
                     this.target.on('onSetOpacity', this.opt.onSetOpacity);
+                }
+
+                //綁定新增圖層事件接口
+                if (typeof (this.opt.onAddNew) === 'function') {
+                    this.target.on('onAddNew', this.opt.onAddNew);
                 }
             }
 
