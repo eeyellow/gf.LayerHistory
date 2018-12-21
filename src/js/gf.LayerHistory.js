@@ -57,6 +57,7 @@
             iconField: 'type',//圖示類型欄位
             urlField: 'kmlurl',
             layeridField: 'layerid2d',
+            isFlyto: false,
 
             iconType: {
                 'folder': {
@@ -305,9 +306,11 @@
                 //#endregion 透明度調整
 
                 //#region 定位圖層FlyTo
-                var flytoContainer = $('<div/>').appendTo(control);
-                var flytoTitle = $('<label/>', { "text": '圖層定位' }).appendTo(flytoContainer).css("font-size", "0.8em");
-                var flytoButton = $('<span/>', { "text": '送出定位', "class": "gfTreeFlytoBtn"}).appendTo(flytoContainer);
+                if (o.opt.isFlyto) {
+                    var flytoContainer = $('<div/>').appendTo(control);
+                    var flytoTitle = $('<label/>', { "text": '圖層定位' }).appendTo(flytoContainer).css("font-size", "0.8em");
+                    var flytoButton = $('<span/>', { "text": '送出定位', "class": "gfTreeFlytoBtn"}).appendTo(flytoContainer);
+                }
                 //#endregion 定位圖層FlyTo
 
                 o.target.prepend(control);
